@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<script type="text/javascript">
+function pole_tom()
+{
+var a_tom= parseFloat(document.getElementById('dlugosca').value);
+var b_tom= parseFloat(document.getElementById('dlugoscb').value);
+var p_tom= a_tom*b_tom;
+document.getElementsByName('pole')[0].value=p_tom.toFixed(2);
+alert("pole="+p_tom.toFixed(2)+" cm^2");
+pokaz1.innerHTML="Pole="+p_tom.toFixed(2)+"cm^2";
+}
+function obw_tom()
+{
+var a_tom= parseFloat(document.getElementById('dlugosca').value);
+var b_tom= parseFloat(document.getElementById('dlugoscb').value);
+var obw_tom= 2*a_tom+2*b_tom;
+document.getElementsByName('obwod')[0].value=obw_tom.toFixed(2);
+alert("Obwod="+obw_tom.toFixed(2)+" cm");
+pokaz2.innerHTML="Obwod="+obw_tom.toFixed(2)+"cm";
+}
+</script>
+<h1>Wszystko o prostokącie</h1><br><br>
+<form name="formularz" action="..." onsubmit="pole_tom(this.a.value,this.b.value);
+ obw_tom(this.a.value,this.b.value);
+ return false"></form>
+Podaj długość boku a: <input type="text" id="dlugosca" value="a"> cm<br><br><br>
+Podaj długość boku b: <input type="text" id="dlugoscb" value="b"> cm<br><br><br>
+<input type="button" name="pole" value="Oblicz pole" Onclick="pole_tom()"><br><br>
+<input type="button" name="obwod" value="Oblicz obwod" Onclick="obw_tom()"><br><br>
+</form>
+<table>
+    <tr id="pokaz1"></tr>
+    <tr id="pokaz2"></tr>
+    </table>
+</body>
+</html>

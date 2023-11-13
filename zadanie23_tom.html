@@ -1,0 +1,42 @@
+<html>
+<head>
+ <meta charset="UTF-8">
+</head>
+<body>
+<script type="text/javascript">
+ 
+    function drabina_tomys(x_tom,d_tom)
+{
+var x_tom = parseFloat(document.getElementById('xdl').value);
+var d_tom = parseFloat(document.getElementById('dl').value);
+var drabina_tom = Math.sqrt(x_tom*x_tom+d_tom*d_tom);
+ document.getElementsByName('drabina')[0].value=drabina_tom.toFixed(2);
+}
+
+	function alfa_tomys(x_tom,d_tom)
+{
+var x_tom = parseFloat(document.getElementById('xdl').value);
+var d_tom = parseFloat(document.getElementById('dl').value);
+var a_tom = d_tom/x_tom;
+var rad_tom = Math.atan(a_tom);
+var alfa_tom = (rad_tom*180)/Math.PI;
+
+  document.getElementsByName('alfa')[0].value=alfa_tom.toFixed(2);
+
+}
+
+</script>
+
+ <h1>Obliczanie  kąta alfa i długości drabiny</h1><br><br>
+ <form name="formularz" action="..." onsubmit="drabina_tomys(this.xdl.value,this.dl.value); alfa_tomys(this.xdl.value,this.dl.value);return false">
+ Podaj d = <input type="text" id="dl" size="6";> 
+ Podaj x = <input type="text" id="xdl" size="6";> <br><br><br>
+ 
+<input TYPE="submit" Value="oblicz" ><br><br><br>
+	  
+   Drabina = <input size="6" name="drabina";>
+   
+   Alfa = <input size="6" name="alfa";><br><br><br>
+
+</body>
+</html>

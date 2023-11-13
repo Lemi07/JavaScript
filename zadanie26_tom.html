@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<script type="text/javascript">
+function obw_tom()
+{
+var a_tom= parseFloat(document.getElementById('podstawaa').value);
+var b_tom= parseFloat(document.getElementById('podstawab').value);
+var h_tom= parseFloat(document.getElementById('wysokosc').value);
+var pit_tom = Math.abs(b_tom-a_tom)
+var ram=(pit_tom*h_tom)/2;
+var obw_tom=a_tom+b_tom+(ram*2); 
+
+
+document.getElementsByName('obwod')[0].value=obw_tom.toFixed(2);
+pokaz1.innerHTML="obwod="+p_tom.toFixed(2);
+}
+function pow_tom()
+{
+var a_tom= parseFloat(document.getElementById('podstawaa').value);
+var b_tom= parseFloat(document.getElementById('podstawab').value);
+var h_tom= parseFloat(document.getElementById('wysokosc').value);
+var ab=a_tom+b_tom;
+var abh=ab*h_tom;
+var p_tom=abh/2;
+document.getElementsByName('pole')[0].value=p_tom.toFixed(2);
+pokaz2.innerHTML="pole="+obw_tom.toFixed(2);
+}
+</script>
+<h1>Wszystko o trapezie</h1><br><br>
+<form name="formularz" action="..." onsubmit="pole_tom(this.a.value,this.b.value);
+ obw_tom(this.a.value,this.b.value);
+ return false"></form>
+Podaj długość boku a: <input type="text" id="podstawaa" value="a"> cm<br><br><br>
+Podaj długość boku b: <input type="text" id="podstawab" value="b"> cm<br><br><br>
+Podaj długość h: <input type="text" id="wysokosc" value="h"> cm<br><br><br>
+<input type="button" name="pole" value="Oblicz pole" Onclick="pow_tom()"><br><br>
+<input type="button" name="obwod" value="Oblicz obwod" Onclick="obw_tom()"><br><br>
+</form>
+<table>
+    <tr id="pokaz1"></tr>
+    <tr id="pokaz2"></tr>
+    </table>
+</body>
+</html>

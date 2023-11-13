@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+ <head>
+	<meta charset="utf-8">
+ </head>
+ <body>
+		<div style="color:navy; font-size: 50px;">
+ 				<script language="JavaScript">
+		var No_tom=prompt("No=","");
+		var t_tom=prompt("t=","");
+		var T_tom=prompt("T1/2=","");
+		 var No_tom=parseFloat(No_tom);
+		 var t_tom=parseFloat(t_tom);
+         var T_tom=parseFloat(T_tom);
+		 var lam=((Math.log(2))/T_tom);
+		 var labpot=(-lam*t_tom); 
+         var em= Math.E;
+         var e=Math.pow(em,labpot);
+		var N= No_tom*e;
+      
+
+			
+ document.write("N0=" + No_tom+"[sztuk]<br>");
+ document.write("t=" + t_tom +"[lat]<br>");
+ document.write("T1/2=" + T_tom +"[lat]<br>");
+ document.write("Lambda = " + lam.toFixed(7) +"[1/rok]<br>");
+ document.write("N = " +N+"[sztuk]<br>");
+
+ 
+ 				</script>
+				<br>
+		</div>
+ </body>
+</html>

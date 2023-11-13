@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <head>
+	<meta charset="utf-8">
+ </head>
+ <body>
+		<div style="color:navy; background-color: gray;">
+ 				<script language="JavaScript">
+		var x1_tom=prompt("x1=","");
+		var x2_tom=prompt("x2","");
+		
+		 var x1_tom=parseFloat(x1_tom);
+		 var x2_tom=parseFloat(x2_tom);
+		 var rad_tom=(x1_tom*Math.PI)/180;
+		 var x1pow_tom = Math.pow(x1_tom,5);
+		 var x2pow_tom = Math.pow(x2_tom,4)
+		 var abs_tom = Math.abs(x1_tom-x2_tom)
+		 var y1_tom = 3*(x1_tom*4/6);
+		 var y2_tom = 2* (Math.cos(rad_tom))+3*(Math.sin(rad_tom));	
+		 var y3_tom = Math.pow(x1pow_tom+2*x2pow_tom,1.0/3.0)*abs_tom
+			
+ document.write("Podane liczby to: x1=" + x1_tom + ",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2=" + x2_tom + "<br>");
+ document.write("W stopniach x1=" + x1_tom + ",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W radianach x1=" + rad_tom.toFixed(2) + "<br>");
+ document.write("y1 = " + y1_tom.toFixed(2) +"<br>");
+ document.write("y2 = " + y2_tom.toFixed(2) +"<br>");
+ document.write("y3 = " + y3_tom.toFixed(2) +"<br>");
+ 
+ 				</script>
+				<br>
+		</div>
+ </body>
+</html>
