@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+function owoc(nazwa_t,kolor_t,kraj_t,Ekologiczny_t)//początek konstruktora
+{
+this.nazwa=nazwa_t;
+this.kolor=kolor_t;
+this.kraj=kraj_t;
+this.Ekologiczny=Ekologiczny_t;
+}//koniec konstruktora
+owoc.prototype.write = function () //definicja metody
+{
+alert(this.nazwa + ' ' + this.kolor+ ' ' + this.kraj+' '+this.Ekologiczny);
+};
+var owoc1 = new owoc("Jabłko", "Zielony", "Polska", "Ekologiczny-Tak"); // nowy obiekt osoba1
+var owoc2 = new owoc('Mandarynka', 'Pomarańczowy', 'Hiszpania','Ekologiczny-Tak');
+var owoc3 = new owoc('Banan', 'żółty', 'Madagaskar','Ekologiczny-Tak');
+owoc1.write(); // uruchomienie metody wypisz() dotyczącej osoby 1
+owoc2.write();
+owoc3.write();
+document.write("dostęp do właściwości:"+"<br>");
+// poniżej dostęp do pól osoby1
+document.write("owoc pierwszy"+" "+owoc1.nazwa+" "+owoc1.kolor+" "+owoc1.kraj+'<br>');
+document.write("owoc drugi"+" "+owoc2.nazwa+" "+owoc2.kolor+" "+owoc2.kraj+'<br>');
+document.write("owoc trzeci"+" "+owoc3.nazwa+" "+owoc3.kolor+" "+owoc3.kraj+'<br>')
+owoc.dostawa='Tir';
+owoc.wypisz=function() {alert('Sposób dostawy: ' + this.dostawa )}
+owoc.wypisz();
+document.write("sposób dostawy:" +owoc.dostawa)
+</script>
+</head>
+<body>
+<br>
+</body>
+</html>
