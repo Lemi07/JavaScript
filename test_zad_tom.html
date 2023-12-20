@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Funkcja kwadratowa</title>
+    <script type="text/javascript">
+        function oblicz() {
+            var a_tom = parseFloat(document.getElementById('a_tom').value);
+            var b_tom = parseFloat(document.getElementById('b_tom').value);
+            var c_tom = parseFloat(document.getElementById('c_tom').value);
+
+            if (a_tom === 0) {
+                alert("To nie jest funkcja kwadratowa");
+                return;
+            }
+
+            var delta_tom = b_tom * b_tom - 4 * a_tom * c_tom;
+            var p_tom = -b_tom / (2 * a_tom);
+            var q_tom = a_tom * p_tom * p_tom + b_tom * p_tom + c_tom;
+
+            document.getElementById('wierzcholek_tom').innerHTML = "Wierzchołek: (" + p_tom.toFixed(2) + ", " + q_tom.toFixed(2) + ")";
+            
+            var funkcjaKwadratowaf_kan_tom = "f(x) = " + a_tom + "(x - " + p_tom.toFixed(2) + ")^2 + " + q_tom.toFixed(2);
+            document.getElementById('f_kan_tom').innerHTML = funkcjaKwadratowaf_kan_tom;
+
+            if (delta_tom < 0) {
+                document.getElementById('m_zer_tom').innerHTML = "<span style='color: red;'>Brak miejsc zerowych</span>";
+            } else if (delta_tom === 0) {
+                var x0_tom = -b_tom / (2 * a_tom);
+                document.getElementById('m_zer_tom').innerHTML = "Miejsce zerowe: x0 = " + x0_tom.toFixed(2);
+            } else {
+                var x1_tom = (-b_tom - Math.sqrt(delta_tom)) / (2 * a_tom);
+                var x2_tom = (-b_tom + Math.sqrt(delta_tom)) / (2 * a_tom);
+                document.getElementById('m_zer_tom').innerHTML = "Miejsca zerowe: x1 = " + x1_tom.toFixed(2) + ", x2 = " + x2_tom.toFixed(2);
+            }
+
+            var funkcjaf_ilocz_tom = "f(x) = " + a_tom + "(x - " + x1_tom.toFixed(2) + ")(x - " + x2_tom.toFixed(2) + ")";
+            document.getElementById('f_ilocz_tom').innerHTML = funkcjaf_ilocz_tom;
+
+            if (a_tom > 0) {
+                document.getElementById('przedzial_tom').innerHTML = "Funkcja rośnie w przedziale (-∞, " + p_tom.toFixed(2) + ") i maleje w przedziale (" + p_tom.toFixed(2) + ", +∞)";
+            } else {
+                document.getElementById('przedzial_tom').innerHTML = "Funkcja maleje w przedziale (-∞, " + p_tom.toFixed(2) + ") i rośnie w przedziale (" + p_tom.toFixed(2) + ", +∞)";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style="color: green;">Funkcja kwadratowa</h1>
+    <form>
+        Podaj a = <input type="text" id="a_tom" size="6"> <br><br>
+        Podaj b = <input type="text" id="b_tom" size="6"> <br><br>
+        Podaj c = <input type="text" id="c_tom" size="6"> <br><br><br>
+ 
+        <input type="button" value="Oblicz" onclick="oblicz()"><br><br><br>
+
+        <div style="font-size: 2cm; color: green;">
+            <div id="wierzcholek_tom"></div>
+            <div id="f_kan_tom"></div>
+            <div id="m_zer_tom"></div>
+            <div id="f_ilocz_tom"></div>
+            <div id="przedzial_tom"></div>
+        </div>
+    </form>
+</body>
+</html>
